@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System - Our School</title>
+    <link rel="stylesheet" href="css/login.css">   
+</head>
+<body>
+    <div class="container">
+        <div class="school-panel">
+            <div class="school-logo"></div>
+        </div>
+        
+        <div class="login-panel">
+            <form id="loginForm" class="form-container">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="loginEmail">Email Address</label>
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    <div class="error-message" id="loginEmailError">Please enter a valid email address</div>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <div class="error-message" id="loginPasswordError">Password is required</div>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="success-message" id="loginSuccess">Login successful! Redirecting now...</div>
+            </form>
+            
+            <footer>
+                <br>
+                <p class="p">جودة التعليم وحسن الإختيار </p>
+                <br>
+                <p>Designed by Thuraya Alqirpi</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            
+            // Handle login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (validateLoginForm()) {
+                    const email = document.getElementById('loginEmail').value;
+                    const password = document.getElementById('loginPassword').value;
+                    
+                    // Here you can add verification from database
+                    // This is just basic validation example
+                    if (email && password) {
+                        // Successful login
+                        document.getElementById('loginSuccess').style.display = 'block';
+                        
+                        // Redirect to homepage after a short delay
+                        setTimeout(() => {
+                            // Replace with your actual homepage URL
+                            window.location.href = "index.html";
+                        }, 2000);
+                    } else {
+                        // Login failed
+                        document.getElementById('loginPasswordError').textContent = 'Email or password is incorrect';
+                        document.getElementById('loginPasswordError').style.display = 'block';
+                    }
+                }
+            });
+            
+            // Validate login form
+            function validateLoginForm() {
+                let isValid = true;
+                const email = document.getElementById('loginEmail');
+                const password = document.getElementById('loginPassword');
+                const emailError = document.getElementById('loginEmailError');
+                const passwordError = document.getElementById('loginPasswordError');
+                
+                // Hide all error messages first
+                hideErrorMessages();
+                
+                // Validate email
+                if (!email.value) {
+                    emailError.textContent = 'Email is required';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else if (!isValidEmail(email.value)) {
+                    emailError.textContent = 'Please enter a valid email address';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validate password
+                if (!password.value) {
+                    passwordError.textContent = 'Password is required';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            // Hide all error messages
+            function hideErrorMessages() {
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => {
+                    msg.style.display = 'none';
+                });
+                
+                document.getElementById('loginSuccess').style.display = 'none';
+            }
+            
+            // Validate email format
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
+

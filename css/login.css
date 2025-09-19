@@ -1,0 +1,206 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: url('../image/pen.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background-color: rgb(19, 110, 152);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .school-panel {
+            flex: 1;
+            background-image: url('../image/تعديل\ الشعار.jpg');
+            padding: 40px;
+            
+            
+        }
+        /*
+        .school-logo {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .school-logo i {
+            font-size: 60px;
+            color: #505c87;
+        }
+        
+        .school-panel h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .school-panel p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }*/
+        
+        .login-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .login-panel h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #010c15;
+            text-align: center;
+        }
+        
+        .form-container {
+            width: 100%;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #01060b;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 2px solid #1c0202;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #415fcc;
+            outline: none;
+        }
+        
+        .input-group i {
+            position: absolute;
+            right: 15px;
+            top: 42px;
+            color: #7a7a7a;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #c09508;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .login-btn:hover {
+            background-color: #000102;
+            color: #fff8f8;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #000000;
+        }
+        
+         footer .p{
+            font-size: 25px;
+            color: #fcfdff;
+         }
+        /* Error message styling */
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            color: #f6fbf8;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                max-width: 350px;
+            }
+            
+            .school-panel {
+                padding: 30px 20px;
+            }
+            
+            .school-panel h2 {
+                font-size: 1.8rem;
+            }
+            
+            .login-panel {
+                padding: 30px 20px;
+            }
+            .school-panel{
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .school-panel h2 {
+                font-size: 1.6rem;
+            }
+            
+            .login-panel h2 {
+                font-size: 1.7rem;
+            }
+            
+            .input-group input {
+                padding: 12px 40px 12px 12px;
+            }
+            
+            .input-group i {
+                top: 38px;
+            }
+        }
+    

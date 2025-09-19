@@ -1,0 +1,327 @@
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('../image/back.jpg');
+            color: #210a0a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* التصميم العلوي */
+        header {
+            padding: 1.2rem 0;
+          background-image: linear-gradient(30deg,#0b628a ,#066da5 );
+            box-shadow: 0 2px 10px rgba(121, 100, 100, 0.1);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        
+      .logo span{ 
+
+       color: rgb(204, 172, 14); 
+} 
+      
+        
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-right: 25px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color:  #bb9e47;;
+        }
+        
+        /* قسم البطل */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0;
+            
+            color: #fff;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: #221b02;
+        }
+        
+        h2{
+            font-size: 2rem;
+            color: #a7882c;
+            margin-bottom: 25px;
+        }
+        
+        p {
+            font-size:20px;
+            margin-bottom: 35px;
+            color: #141516;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color:  #ffc107;
+            color: #1e2224;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid #ffc107;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #111110;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(138, 104, 104, 0.3);
+        }
+        
+        /* قسم الأهداف */
+        .goals-section {
+            padding: 80px 0;
+            background-image: url('../image/back.jpg');
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #121415;
+            font-size: 2.5rem;
+        }
+        
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .goal-card {
+            background: #4077a7;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* تأثيرات الحركة على الكروت - هذه هي الأهم */
+        .goal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .goal-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #1a5f7a, #ffc107);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .goal-card:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .goal-img {
+            width:200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 30%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid #1a5f7a;
+            transition: all 0.3s ease;
+        }
+        
+        .goal-card:hover .goal-img {
+            transform: scale(1.1);
+            border-color: #ffc107;
+        }
+        
+        .goal-card h3 {
+            color: #e6f0f4;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .goal-card:hover h3 {
+            color: #ffc107;
+        }
+        
+        .goal-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            color: #1a0707;
+            line-height: 1.6;
+        }
+        
+        /* التذييل */
+        footer {
+           background-image: linear-gradient(30deg,#0b628a ,#066da5 );
+            padding:10px;
+            text-align: center;
+            color: #f9f9f9;
+        }
+        footer div .container{/************************/
+            color: #fff8f8;
+        }
+        footer .container p{
+            color: #eeeff0;
+        }
+        
+        /* التجاوب مع الشاشات المختلفة */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero-content {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            .goal-card {
+                padding: 20px;
+            }
+        }
+
+
+
